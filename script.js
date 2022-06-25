@@ -1,8 +1,32 @@
-// Assignment Code
+// Declared Variables
 var generateBtn = document.querySelector("#generate");
 var numbers = "0123456789";
-var UpLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var DownLetter = "abcdefghijklmnopqrstuvwxyz"
+var upLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var downLetter = "abcdefghijklmnopqrstuvwxyz"
+var inputLength;
+var passLength;
+
+function inputLength() {
+  passLength = prompt("Input desired password length 8-128 Characters.");
+
+if (passLength <8){
+  alert("Try again, Desired password must be between 8-128 Characters.");
+  inputLength();
+}
+else if(passLength>128) {
+  alert("Try again, Desired password must be between 8-128 Characters.");
+  inputLength();
+}
+}
+
+
+
+
+
+
+
+
+
 
 
 
