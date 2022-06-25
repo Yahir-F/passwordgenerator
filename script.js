@@ -20,7 +20,7 @@ if (passLength<8){
   inputLength();
 }
 }
-
+//Function that asks the user if they want Uppercase letters 
 function checkUp(){
   upCheck = prompt("Do you want UpperCase Letters in the Password? \n (N = No or Y = Yes)");
   upCheck = upCheck.toLowerCase();
@@ -48,7 +48,7 @@ function checkUp(){
 
 
 
-//Created varible that will ask for input if they want numbers in their password and how it will respond given the user input.
+//Created function that will ask for input if they want numbers in their password and how it will respond given the user input.
 function wantNumber(){
     checknum = prompt("Do you want the password to include numbers? \n (N = No or Y = Yes)");
     checknum = checknum.toLowerCase();
@@ -72,7 +72,7 @@ return checknum;
 }
 return checknum;
 }
-
+//function that will ask user if they want special characters
 function checkSpec(){
    specCheck = prompt("Do you want the password to inclue special Characters? \n (N = No or Y = Yes)");
    specCheck = specCheck.toLowerCase();
@@ -97,14 +97,19 @@ return specCheck;
 return specCheck;
 
 }
+//function that brings everything together 
 function genPassword(){
 inputLength();
 console.log(passLength);
-console.log(checknum);
-
+checkUp();
+console.log(upCheck);
+wantNumber();
+console.log(checknum)
+checkSpec();
+console.log(specCheck)
 }
 
-// Write password to the #password input
+
 function writePassword() {
 var passwords = "";
    passwords = genPassword();
@@ -112,9 +117,9 @@ var passwords = "";
  passwordText.value = passwords;
 }
 
-// Add event listener to generate button
 
 
 
 
+//button that will start the application
 generateBtn.addEventListener("click", writePassword);
