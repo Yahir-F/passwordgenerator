@@ -104,11 +104,45 @@ console.log(passLength);
 checkUp();
 console.log(upCheck);
 wantNumber();
-console.log(checknum)
+console.log(checknum);
 checkSpec();
-console.log(specCheck)
-}
+console.log(specCheck);
 
+var letters = downLetter;
+var pass = "";
+if(upCheck && checknum && specCheck){
+  letters += upLetter + numbers + special;
+
+}
+else if (upCheck && checknum){
+  letters += upLetter + numbers;
+
+}
+else if (checknum && specCheck){
+letters += numbers + special;
+
+}
+else if (upCheck && specCheck){
+  letters += upLetter + special;
+}
+else if (upCheck){
+  letters += upLetter;
+}
+else if (checknum){
+  letters += numbers;
+}
+else if (specCheck){
+  letters += special;
+}
+else {
+  letters === downLetter;
+}
+for (var i = 0; i< passLength; i++){
+  pass += letters.charAt(Math.floor(Math.random() * letters.length));
+
+}
+return pass;
+}
 
 function writePassword() {
 var passwords = "";
