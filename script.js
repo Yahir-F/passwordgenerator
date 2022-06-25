@@ -6,7 +6,8 @@ var downLetter = "abcdefghijklmnopqrstuvwxyz";
 var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
 var passLength;
 var checknum;
-var specCheck
+var specCheck;
+var upCheck;
 //Function that will prompt user to input desired password lenght
 function inputLength() {
   passLength = prompt("Input desired password length 8-128 Characters.");
@@ -20,9 +21,36 @@ if (passLength<8){
 }
 }
 
+function checkUp(){
+  upCheck = prompt("Do you want UpperCase Letters in the Password? \n (N = No or Y = Yes)");
+  upCheck = upCheck.toLowerCase();
+
+  if (upCheck === null || upCheck === ""){
+    alert("Invalid Answer Try again.")
+    wantNumber();
+  
+  }else if (upCheck === "y" || upCheck === "yes"){
+  upCheck = true;
+  return upCheck;
+  
+  
+  }else if (upCheck === "n" || upCheck === "no"){
+    upCheck = false;
+    return upCheck;
+  
+  }else {
+    alert("Invalid Answer Try again.");
+    wantNumber();
+  }
+  return upCheck;
+}
+
+
+
+
 //Created varible that will ask for input if they want numbers in their password and how it will respond given the user input.
 function wantNumber(){
-    checknum = prompt("Do you want the password to include numbers? \n (N = No or Y = Yes");
+    checknum = prompt("Do you want the password to include numbers? \n (N = No or Y = Yes)");
     checknum = checknum.toLowerCase();
 
 if (checknum === null || checknum === ""){
@@ -46,14 +74,33 @@ return checknum;
 }
 
 function checkSpec(){
-   specCheck = prompt("Do you want the password to inclue special Characters? \n (N = No or Y = Yes");
+   specCheck = prompt("Do you want the password to inclue special Characters? \n (N = No or Y = Yes)");
+   specCheck = specCheck.toLowerCase();
+
+if (specCheck === null || specCheck === ""){
+  alert("Invalid Answer Try again.");
+  wantNumber();
+
+}else if (specCheck === "y" || specCheck === "yes"){
+specCheck = true;
+return specCheck;
+
+
+}else if (specCheck === "n" || specCheck === "no"){
+  specCheck = false;
+return specCheck;
+
+}else {
+  alert("Invalid Answer Try again.");
+  wantNumber();
 }
+return specCheck;
 
-
+}
 function genPassword(){
 inputLength();
 console.log(passLength);
-
+console.log(checknum);
 
 }
 
